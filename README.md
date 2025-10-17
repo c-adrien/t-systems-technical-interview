@@ -34,6 +34,8 @@ This architecture ensures that the API key is hidden to the user and is only ava
 
 The frontend handling is managed with JavaScript.
 
+![Chat Interface](chat-interface.png)
+
 
 ## Prerequisites
 
