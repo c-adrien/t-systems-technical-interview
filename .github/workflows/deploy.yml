@@ -1,0 +1,29 @@
+name: Deploy PHP app to Azure Web App
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        env:
+            AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+            AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+            AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+            GREETING_NAME: ${{ vars.GREETING_NAME }}
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Replace placeholder in files
+              run: |
+                  sed -i "s/\$GREETING_NAME/${GREETING_NAME}/g" $(grep -rl 'GREETING_NAME' .)
+
+            - name: Run deployment script
+              run: |
+                  chmod +x ./deploy.sh
+                  ./deploy.sh
