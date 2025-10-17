@@ -30,7 +30,7 @@ This repository demonstrates a simple pipeline that deploys a static website to 
 Uses the deepseek/deepseek-chat-v3.1:free model via OpenRouter.
 
 The feature consists of a textbox and a submit button. It sends the user's input to ``chat.php``, which itself produces the curl request to the LLM, using a preconfigured API key.
-This architecture ensures that the API key is hidden to the user and is only available at runtime by the app service.
+This architecture ensures that the API key is hidden to the user and is only available at runtime to the app service.
 
 The frontend handling is managed with JavaScript.
 
