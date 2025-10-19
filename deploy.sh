@@ -38,7 +38,7 @@ az webapp up --name $WEBAPP_NAME \
     --sku F1 \
     --os-type Linux --runtime "$RUNTIME"
 
-# Web App configuration
-az webapp deployment source config \
-    --repo-url $GITHUB_REPO --branch $GITHUB_BRANCH --manual-integration \
-    --name $WEBAPP_NAME --resource-group $RESOURCE_GROUP
+# # Web App configuration
+# az webapp deployment source config \
+#     --repo-url $GITHUB_REPO --branch $GITHUB_BRANCH --manual-integration \
+#     --name $WEBAPP_NAME --resource-group $RESOURCE_GROUP
